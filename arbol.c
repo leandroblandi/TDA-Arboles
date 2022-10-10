@@ -190,4 +190,5 @@ void guardarArboles(Arbol arboles[])
             }
         }
     }
+    fclose(archivoArboles);
 }
