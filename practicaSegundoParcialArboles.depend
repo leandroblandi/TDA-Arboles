@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1665408153 source:c:\users\el3be\documents\practicas en c\practicasegundoparcialarboles\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arbol.h"
+
+1665407732 source:c:\users\el3be\documents\practicas en c\practicasegundoparcialarboles\arbol.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"arbol.h"
+
+1665408941 c:\users\el3be\documents\practicas en c\practicasegundoparcialarboles\arbol.h
+
