@@ -43,7 +43,7 @@ Arbol crearArbolPorTeclado()
 
     printf("\nIngrese nombre del arbol: ");
     fflush(stdin);
-    gets(nombre);
+    strtok(fgets(nombre, 25, stdin), "\n");
 
     printf("\nIngrese la edad de \"%s\": ", nombre);
     scanf("%d", &edad);
@@ -190,4 +190,5 @@ void guardarArboles(Arbol arboles[])
             }
         }
     }
+    fclose(archivoArboles);
 }
