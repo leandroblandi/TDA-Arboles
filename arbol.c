@@ -78,6 +78,7 @@ int buscarPosicionLibre(Arbol arboles[])
 
 void mostrarArbol(Arbol arbol)
 {
+    // Si el Arbol es 'no-filtrable'
     if(arbol->edad != -1)
     {
         printf("\nArbol:");
