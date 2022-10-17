@@ -103,6 +103,7 @@ void agregarArbol(Arbol arboles[])
 
 void modificarArbol(Arbol arboles[], char nombreArbol[])
 {
+    int encontrado = -1;
     for(int i = 0; i < CANTIDAD_ARBOLES; i++)
     {
         if(strcmp(arboles[i]->nombre, nombreArbol) == 0)
@@ -113,10 +114,10 @@ void modificarArbol(Arbol arboles[], char nombreArbol[])
             printf("\nIngrese nueva altura para \"%s\" (actual: %.2f): ", arboles[i]->nombre, arboles[i]->altura);
             scanf("%f", &arboles[i]->altura);
         }
-        else
-        {
-            printf("\nNo se encontro arbol con nombre \"%s\", pruebe con otro nombre", nombreArbol);
-        }
+    }
+    if(encontrado == -1)
+    {
+        printf("\nNo se encontro arbol con nombre \"%s\", pruebe con otro nombre", nombreArbol);
     }
 }
 
