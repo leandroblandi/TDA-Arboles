@@ -192,3 +192,75 @@ void guardarArboles(Arbol arboles[])
     }
     fclose(archivoArboles);
 }
+
+Arbol parsearArboles(char datosSinParsear[30])
+{
+
+    int posPrimerDelimitador = -1;
+    int posSegundoDelimitador = -1;
+
+    char nombreArbol[25] = "";
+    char edadArbol[5] = "";
+    char alturaArbol[6] = "";
+
+
+
+    // Buscamos primer delimitador
+    for(int i = 0; i < 30; i++)
+    {
+        if(datosSinParsear[i] == '+')
+        {
+            posPrimerDelimitador = i;
+            i = 30;
+        }
+    }
+
+    // Buscamos segundo delimitador
+    for(int i = posPrimerDelimitador + 1; i < 30; i++)
+    {
+        if(datosSinParsear[i] == '+')
+        {
+            posSegundoDelimitador = i;
+            i = 30;
+        }
+    }
+
+    // Separamos los datos: nombre
+    for(int i = 0; i < posPrimerDelimitador; i++)
+    {
+        nombreArbol[i] = datosSinParsear[i];
+    }
+    nombreArbol[strlen(nombreArbol)] = '\0';
+
+    // Separamos los datos: edad
+    for(int i = posPrimerDelimitador + 1; i < posSegundoDelimitador; i++)
+    {
+        edadArbol[i - posPrimerDelimitador - 1] = datosSinParsear[i];
+    }
+    edadArbol[strlen(edadArbol)] = '\0';
+
+    // Separamos los datos: altura
+    for(int i = posSegundoDelimitador + 1; i < strlen(datosSinParsear); i++)
+    {
+        alturaArbol[i - posSegundoDelimitador - 1] = datosSinParsear[i];
+    }
+    alturaArbol[strlen(alturaArbol)]= '\0';
+
+    return crearArbol(nombreArbol, atoi(edadArbol), atof(alturaArbol));
+}
+
+
+ void cargarArboles(Arbol arboles[])
+ {
+    FILE * archivoArboles = fopen("arboles.txt", "r");
+
+    char datos[30] = "";
+
+    int i = 0;
+
+    while((fgets(datos, 30, archivoArboles)) && (i < CANTIDAD_ARBOLES))
+    {
+        arboles[i] = parsearArboles(datos);
+        i++;
+    }
+ }

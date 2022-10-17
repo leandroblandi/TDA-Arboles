@@ -1,5 +1,2 @@
 Pedro+23+34.54
-Manuel+55+56.55
-Juan+34+55.88
-Antonio+33+23.11
-Leandro+20+1.69
+

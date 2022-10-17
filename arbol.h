@@ -68,6 +68,11 @@ void mostrarArboles(Arbol arboles[]);
 /*---------------------------
  | Procedimientos de archivo
  ----------------------------*/
+ Arbol parsearArboles(char datosSinParsear[30]);
+
+/// @pre: Deberia de existir el vector y tener posicion libre, el archivo no debe estar vacio
+/// @post: Carga los datos parseados en cada posicion de Arboles arboles[]
+ void cargarArboles(Arbol arboles[]);
 
 /// @pre: debe existir 'arboles.txt', los Arboles deben ser 'no-filtrabes' y debe existir el array
 /// @post: crea/sobreescribe el archivo 'arboles.txt' con todos los datos del arreglo separados por el delimitador '+'

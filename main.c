@@ -11,7 +11,7 @@ int main()
 
     inicializarArboles(arboles);
 
-    agregarArboles(arboles, 5);
+    agregarArbol(arboles);
 
     mostrarArboles(arboles);
 

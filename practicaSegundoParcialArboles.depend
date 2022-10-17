@@ -12,3 +12,16 @@
 
 1665408941 c:\users\el3be\documents\practicas en c\practicasegundoparcialarboles\arbol.h
 
+1666012857 source:c:\users\aula11\documentos\tda-arboles\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arbol.h"
+
+1666012166 c:\users\aula11\documentos\tda-arboles\arbol.h
+
+1666013210 source:c:\users\aula11\documentos\tda-arboles\arbol.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"arbol.h"
+
