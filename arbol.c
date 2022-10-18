@@ -9,6 +9,7 @@
 #include <string.h>
 #include "arbol.h"
 
+#define CADENA_SIN_PARSEAR 30
 #define CANTIDAD_ARBOLES 100
 
 
@@ -196,33 +197,30 @@ void guardarArboles(Arbol arboles[])
 
 Arbol parsearArboles(char datosSinParsear[30])
 {
-
     int posPrimerDelimitador = -1;
     int posSegundoDelimitador = -1;
 
     char nombreArbol[25] = "";
     char edadArbol[5] = "";
-    char alturaArbol[6] = "";
-
-
+    char alturaArbol[5] = "";
 
     // Buscamos primer delimitador
-    for(int i = 0; i < 30; i++)
+    for(int i = 0; i < CADENA_SIN_PARSEAR; i++)
     {
         if(datosSinParsear[i] == '+')
         {
             posPrimerDelimitador = i;
-            i = 30;
+            i = CADENA_SIN_PARSEAR;
         }
     }
 
     // Buscamos segundo delimitador
-    for(int i = posPrimerDelimitador + 1; i < 30; i++)
+    for(int i = posPrimerDelimitador + 1; i < CADENA_SIN_PARSEAR; i++)
     {
         if(datosSinParsear[i] == '+')
         {
             posSegundoDelimitador = i;
-            i = 30;
+            i = CADENA_SIN_PARSEAR;
         }
     }
 
@@ -259,7 +257,7 @@ Arbol parsearArboles(char datosSinParsear[30])
 
     int i = 0;
 
-    while((fgets(datos, 30, archivoArboles)) && (i < CANTIDAD_ARBOLES))
+    while((fgets(datos, CADENA_SIN_PARSEAR, archivoArboles)) && (i < CANTIDAD_ARBOLES))
     {
         arboles[i] = parsearArboles(datos);
         i++;

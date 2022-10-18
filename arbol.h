@@ -68,6 +68,9 @@ void mostrarArboles(Arbol arboles[]);
 /*---------------------------
  | Procedimientos de archivo
  ----------------------------*/
+
+ /// @pre: Recibe una cadena de texto con el formato '%s+%d+%.2f\n'
+/// @post: Devuelve un struct _Arbol con los datos parseados
  Arbol parsearArboles(char datosSinParsear[30]);
 
 /// @pre: Deberia de existir el vector y tener posicion libre, el archivo no debe estar vacio
